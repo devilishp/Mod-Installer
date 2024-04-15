@@ -24,5 +24,21 @@ namespace ModInstaller.View
         {
             InitializeComponent();
         }
+        private void SelectFolder_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new System.Windows.Forms.FolderBrowserDialog();
+            System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                string selectedPath = dialog.SelectedPath;
+                FolderPathTextBox.Text = selectedPath;
+            }
+        }
+
+        private void ClearPath_Click(object sender, RoutedEventArgs e)
+        {
+            FolderPathTextBox?.Clear();
+        }
     }
 }
