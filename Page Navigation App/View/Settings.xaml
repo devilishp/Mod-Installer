@@ -69,7 +69,7 @@
             <Image Source="../Images/img_folder.png"
         Style="{StaticResource Image_Style}" Margin="0 0 0 0" Width="30" Height="28" Cursor="Hand"/>
         </Button>
-        <Button Style="{StaticResource clearBtn}" Margin="15,98,494,442" Click="ClearPath_Click"></Button>
+        <Button Style ="{StaticResource clearBtn}" Margin="10,92,510,452" Click="ClearPath_Click" Foreground="White" FontFamily="../Fonts/#Rubik" Cursor="Hand">Очистить</Button>
 
     </Grid>
 
