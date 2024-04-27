@@ -64,12 +64,12 @@
         <TextBlock Style="{StaticResource Text_Style}" Margin="10,26,0,0" VerticalAlignment="Top">
         Укажите путь к игре
         </TextBlock>
-        <TextBox Style="{DynamicResource TextBox_Style}" x:Name="FolderPathTextBox" IsReadOnly="True" Margin="10,59,213,489" Cursor="Arrow"/>
-        <Button Margin="379,56,183,486" Click="SelectFolder_Click" Height="28" Width="30" Style="{StaticResource folderBtn}">
+        <TextBox Style="{DynamicResource TextBox_Style}" x:Name="FolderPathTextBox" Text="{Binding FolderPath, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" Margin="10,59,213,489" Cursor="Arrow"/>
+        <Button Margin="379,56,183,486" Command="{Binding SelectFolderCommand}" Height="28" Width="30" Style="{StaticResource folderBtn}">
             <Image Source="../Images/img_folder.png"
         Style="{StaticResource Image_Style}" Margin="0 0 0 0" Width="30" Height="28" Cursor="Hand"/>
         </Button>
-        <Button Style ="{StaticResource clearBtn}" Margin="10,92,510,452" Click="ClearPath_Click" Foreground="White" FontFamily="../Fonts/#Rubik" Cursor="Hand">Очистить</Button>
+        <Button Style ="{StaticResource clearBtn}" Command="{Binding ClearPathCommand}" Margin="10,92,510,452" Foreground="White" FontFamily="../Fonts/#Rubik" Cursor="Hand">Очистить</Button>
 
     </Grid>
 

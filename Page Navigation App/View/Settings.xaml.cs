@@ -26,27 +26,6 @@ namespace ModInstaller.View
         public Settings()
         {
             InitializeComponent();
-            
-            FolderPathTextBox.Text = Convert.ToString(JsonConvert.DeserializeObject(File.ReadAllText("..\\..\\..\\JSON\\pathGTA.json")));
-        }
-        private void SelectFolder_Click(object sender, RoutedEventArgs e)
-        {
-            var dialog = new System.Windows.Forms.FolderBrowserDialog();
-            System.Windows.Forms.DialogResult result = dialog.ShowDialog();
-
-            if (result == System.Windows.Forms.DialogResult.OK)
-            {
-                string selectedPath = dialog.SelectedPath;
-                string json = JsonConvert.SerializeObject(selectedPath, Formatting.Indented);
-                File.WriteAllText("..\\..\\..\\JSON\\pathGTA.json", json);
-                FolderPathTextBox.Text = selectedPath;
-            }
-        }
-
-        private void ClearPath_Click(object sender, RoutedEventArgs e)
-        {
-            File.WriteAllText("..\\..\\..\\JSON\\pathGTA.json", "");
-            FolderPathTextBox?.Clear();
         }
     }
 }
